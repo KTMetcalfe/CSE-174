@@ -15,9 +15,9 @@ public class ChangeCalculator {
         // Creates scanner and takes in file names
         Scanner input = new Scanner(System.in);
         System.out.printf("Enter the name of the input file: ");
-        File fileInput = new File(input.next());
+        File fileInput = new File("/Users/kianmetcalfe/desktop/CSE-174/Programs/Program1/" + input.next());
         System.out.printf("Enter the name of the output (csv) file: ");
-        File fileOutput = new File(input.next());
+        File fileOutput = new File("/Users/kianmetcalfe/desktop/CSE-174/Programs/Program1/" + input.next());
         input.close();
 
         // Creates scanner to pull out data from input file

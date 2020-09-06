@@ -1,0 +1,4 @@
+,pennies,nickels,dimes,quarters,coin count
+original,17,3,5,8,33
+final,17,1,0,11,14
+total,$2.82
