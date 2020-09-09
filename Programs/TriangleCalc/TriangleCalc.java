@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class TriangleCalc {
     public static void main(String[] args) {
-        // Starts intro and recieves unknown variable
+        // Starts intro, creates scanner, and recieves unknown variable
         Introduction();
         Scanner input = new Scanner(System.in);
         char unknownVar = input.next().charAt(0);
@@ -45,8 +45,8 @@ public class TriangleCalc {
         }
     }
 
-    //Prints out basic introductory information 
-    //and asks the important question
+    // Prints out basic introductory information 
+    // and asks the important question
     public static void Introduction() {
         System.out.printf(
             "Example Triangle:%n%n" + 
@@ -65,6 +65,7 @@ public class TriangleCalc {
     }
 
     // Math is in relation to angle (Y), which is across from side (c)
+    // Base equation: c^2 = a^2 + b^2 - 2bc * cos(Y)
     public static double calculate_a(double b, double c, double Y) {
         Y = Math.toRadians(Y);
         double a = (b * Math.cos(Y)) + Math.sqrt(
@@ -73,6 +74,7 @@ public class TriangleCalc {
     }
 
     // Math is in relation to angle (Y), which is across from side (c)
+    // Base equation: c^2 = a^2 + b^2 - 2bc * cos(Y)
     public static double calculate_b(double a, double c, double Y) {
         Y = Math.toRadians(Y);
         double b = (a * Math.cos(Y)) + Math.sqrt(
