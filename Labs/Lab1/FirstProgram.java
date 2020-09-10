@@ -11,7 +11,7 @@ public class FirstProgram {
 
    public static void main(String[] args) {
       // Declare local variables
-      float x = 4.0;
+      float x = 4.0f;
       System.out.println(x);
       
       String first, last;
@@ -57,6 +57,8 @@ public class FirstProgram {
          System.out.print("Enter guess #" + guessCount + ": ");
          guess = keyboardReader.nextInt();
       } // end loop
+
+      keyboardReader.close();
       
       // By the time we get here, the user has guessed the correct
       // number. Print the results

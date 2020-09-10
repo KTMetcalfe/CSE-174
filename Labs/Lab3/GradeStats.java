@@ -23,6 +23,7 @@ public class GradeStats {
             System.out.print(firstName + "'s grade on exam " + (i + 1) + ": ");
             grades[i] = input.nextDouble();
         }
+        input.close();
 
         //Calculates average, minumum, and maximum grades
         double gradeAverage = (grades[0] + grades[1] + grades[2]) / 3.0;
