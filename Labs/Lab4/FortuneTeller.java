@@ -5,41 +5,53 @@
 // This program creates a fortune for you based on...
 
 import java.util.Scanner;
+import java.util.logging.*;
 
 public class FortuneTeller {
     public static void main(String[] args) {
+        // Turns off degugging logger
+        Logger.getGlobal().setLevel(Level.OFF);
+
         // Creates scanner, recieves information, then closes scanner
         Scanner input = new Scanner(System.in);
 
         System.out.println("Welcome to CSE 174 Fortune Telling!\n");
         System.out.print("What is your first name? ");
         String name = input.next();
-        System.out.print("What is your favorite color " + 
-            "(red, green, blue, yellow, orange, purple)? ");
+        System.out.print("What is your favorite color " 
+            + "(red, green, blue, yellow, orange, purple)? ");
         String color = input.next();
         System.out.print("What year were you born? ");
         int year = input.nextInt();
-        System.out.print("On a scale of 1 (bad) to 10 (great)" + 
-            ", how do you feel? ");
+        System.out.print("On a scale of 1 (bad) to 10 (great)"
+            + ", how do you feel? ");
         int feeling = input.nextInt();
         System.out.print("True/False: Pineapple belongs on Pizza? ");
         boolean pineapple = input.nextBoolean();
 
         input.close();
+        
+        // Logs input variables
+        Logger.getGlobal().info("Input variables: " + name + ", " + color + ", " + year + ", " + feeling + ", " + pineapple);
 
         // Prints output using "blank" methods
         System.out.printf("\n%s,\n", name);
         System.out.printf("\nYou will have a %s day.", blank1(name));
-        System.out.printf("\nYou should watch out for %s today.", blank2(color));
-        System.out.printf("\nFocus your priorities on %s for the next week.", blank3(year));
-        System.out.printf("\nTo be your best you, make sure you don't %s.", blank4(feeling));
-        System.out.printf("\nOur parting words of wisdom are: \"%s\".", blank5(pineapple));
+        System.out.printf("\nYou should watch out for %s today.", 
+            blank2(color));
+        System.out.printf("\nFocus your priorities on %s for the next week.", 
+            blank3(year));
+        System.out.printf("\nTo be your best you, make sure you don't %s.", 
+            blank4(feeling));
+        System.out.printf("\nOur parting words of wisdom are: \"%s\".", 
+            blank5(pineapple));
     }
 
     // Creates blank1 and uses ascii to compare first letter of name
     public static String blank1(String name) {
         String result = "blank1";
         char letter = name.toLowerCase().charAt(0);
+        Logger.getGlobal().info("Lowercase first letter: " + letter);
 
         if (letter >= 97 && letter <= 102) { // a - f
             result = "good";
@@ -58,6 +70,7 @@ public class FortuneTeller {
     public static String blank2(String color) {
         String result = "blank2";
         color = color.toLowerCase();
+        Logger.getGlobal().info("Lowercase color: " + color);
 
         switch (color) {
             case "red":
@@ -121,11 +134,7 @@ public class FortuneTeller {
     public static String blank5(boolean pineapple) {
         String result = "blank5";
 
-        if (pineapple) {
-            result = "Enjoy the little things in life";
-        } else {
-            result = "Open your mind to new possibilities";
-        }
+        result = pineapple == true ? "Enjoy the little things in life" : "Open your mind to new possibilities";
 
         return result;
     }
