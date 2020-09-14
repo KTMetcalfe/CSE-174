@@ -5,7 +5,8 @@
 // This program creates a fortune for you based on...
 
 import java.util.Scanner;
-import java.util.logging.*;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
 public class FortuneTeller {
     public static void main(String[] args) {
@@ -32,18 +33,20 @@ public class FortuneTeller {
         input.close();
         
         // Logs input variables
-        Logger.getGlobal().info("Input variables: " + name + ", " + color + ", " + year + ", " + feeling + ", " + pineapple);
+        Logger.getGlobal().info("Input variables: " 
+            + name + ", " + color + ", " + year 
+            + ", " + feeling + ", " + pineapple);
 
         // Prints output using "blank" methods
         System.out.printf("\n%s,\n", name);
-        System.out.printf("\nYou will have a %s day.", blank1(name));
+        System.out.printf("\nToday you will have a %s day.", blank1(name));
         System.out.printf("\nYou should watch out for %s today.", 
             blank2(color));
         System.out.printf("\nFocus your priorities on %s for the next week.", 
             blank3(year));
         System.out.printf("\nTo be your best you, make sure you don't %s.", 
             blank4(feeling));
-        System.out.printf("\nOur parting words of wisdom are: \"%s\".", 
+        System.out.printf("\nOur parting words of wisdom are: \"%s\".\n", 
             blank5(pineapple));
     }
 
@@ -73,7 +76,7 @@ public class FortuneTeller {
         Logger.getGlobal().info("Lowercase color: " + color);
 
         switch (color) {
-            case "red":
+            default:
                 result = "spilling on your clothes";
                 break;
             case "green":
@@ -134,7 +137,9 @@ public class FortuneTeller {
     public static String blank5(boolean pineapple) {
         String result = "blank5";
 
-        result = pineapple == true ? "Enjoy the little things in life" : "Open your mind to new possibilities";
+        result = pineapple == true 
+            ? "Enjoy the little things in life" 
+            : "Open your mind to new possibilities";
 
         return result;
     }
