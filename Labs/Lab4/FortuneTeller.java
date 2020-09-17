@@ -1,5 +1,3 @@
-package Labs.Lab4;
-
 // Kian Metcalfe
 // CSE 174, Section D
 // 9/10/20
