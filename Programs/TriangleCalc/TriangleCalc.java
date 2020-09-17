@@ -1,3 +1,5 @@
+package Programs.TriangleCalc;
+
 // Kian Metcalfe
 // 9/9/20
 

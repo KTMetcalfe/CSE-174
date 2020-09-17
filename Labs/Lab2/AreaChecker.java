@@ -1,3 +1,5 @@
+package Labs.Lab2;
+
 // August 23, 2020
 // Author: Kian M
 // Computes the area of a rectangle using two sets of values.
