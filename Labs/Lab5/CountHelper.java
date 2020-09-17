@@ -22,7 +22,7 @@ public class CountHelper {
         int valueStart = input.nextInt();
         System.out.print("Enter the ending value to count to: ");
         int valueEnd = input.nextInt();
-        System.out.print("Enter step value" 
+        System.out.print("Enter step value " 
             + "(positive #s count up/negative count down): ");
         int valueIteration = input.nextInt();
 
@@ -32,7 +32,7 @@ public class CountHelper {
         Logger.getGlobal().info("Input values: " + valueStart + ", " + valueEnd 
             + ", " + valueIteration);
 
-        System.out.printf("\nCount: %s", 
+        System.out.printf("\nCount: %s\n", 
             valueList(valueStart, valueEnd, valueIteration));
     }
 
@@ -42,17 +42,17 @@ public class CountHelper {
 
         if (start < end && iteration > 0) {
             for (int i = start; i <= end; i = i + iteration) {
-                values = values + " " + i; 
+                values = values + i + " "; 
             }
             Logger.getGlobal().info("Up: " + values);
         } else if (start > end && iteration < 0) {
             for (int i = start; i >= end; i = i + iteration) {
-                values = values + " " + i; 
+                values = values + i + " "; 
             }
             Logger.getGlobal().info("Down: " + values);
         } else {
             values = "You can't count from " + start + " to " + end 
-                + " by " + iteration;
+                + " by " + iteration + "!";
             Logger.getGlobal().info("Failed: " + values);
         }
 
