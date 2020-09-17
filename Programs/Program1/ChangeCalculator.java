@@ -1,5 +1,3 @@
-package Programs.Program1;
-
 // Kian Metcalfe
 // CSE 174, Section D
 // 9/4/20
