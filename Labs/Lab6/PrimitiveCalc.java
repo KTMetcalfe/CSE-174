@@ -35,31 +35,29 @@ public class PrimitiveCalc {
                 operator = lineReader.next();
                 total = lineReader.nextInt();
 
+                System.out.printf("Result of Line %d: ", lineNumber);
                 try {
-                    System.out.printf("Result of Line %d: ", lineNumber);
-                    try {
-                        while (lineReader.hasNext()) {
-                            switch (operator) {
-                                default:
-                                    total += lineReader.nextInt();
-                                    break;
-                                case "-":
-                                    total -= lineReader.nextInt();
-                                    break;
-                                case "*":
-                                    total *= lineReader.nextInt();
-                                    break;
-                                case "/":
-                                    total /= lineReader.nextInt();
-                                    break;
-                            }
+                    while (lineReader.hasNext()) {
+                        switch (operator) {
+                            default:
+                                total += lineReader.nextInt();
+                                break;
+                            case "-":
+                                total -= lineReader.nextInt();
+                                break;
+                            case "*":
+                                total *= lineReader.nextInt();
+                                break;
+                            case "/":
+                                total /= lineReader.nextInt();
+                                break;
                         }
-                        System.out.println(total);
-                    } catch (ArithmeticException e) {
-                        System.out.printf("Error: %s\n", e.getMessage());
                     }
+                    System.out.println(total);
+                } catch (ArithmeticException e) {
+                    System.out.printf("Error: %s\n", e.getMessage());
                 } catch (InputMismatchException e) {
-                    System.out.printf("Non-integer input on this Line\n", lineNumber);
+                    System.out.printf("Non-integer input on this Line\n");
                 }
             }
         } catch (FileNotFoundException e) {
