@@ -36,6 +36,7 @@ public class TheGame {
                         guess = input.nextInt();
                     } catch (InputMismatchException e) {
                         guess = 0;
+                        input.next();
                     }
 
                     if (guess == mysteryNumber) {
@@ -73,8 +74,7 @@ public class TheGame {
 
             fileReader.close();
         } catch (FileNotFoundException e) {
-            System.out.println(filename
-                + " (The system cannot find the file specified)");
+            System.out.println(e.getMessage());
         }
         input.close();
     }
