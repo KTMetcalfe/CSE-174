@@ -5,6 +5,7 @@
 // unknown variable (varUnknown) and known variables (num_) provided by input
 
 import java.util.Scanner;
+import javax.swing.JFrame;
 
 public class PhysicsHelper {
     // Declares the variables for the strings that need to be parsed
@@ -20,6 +21,11 @@ public class PhysicsHelper {
     static double num_t;
 
     public static void main(String[] args) {
+        JFrame f = new JFrame("Physics Helper");
+        f.setSize(400, 500);
+        f.setLayout(null);
+        f.setVisible(true);
+
         Scanner input = new Scanner(System.in);
         Introduction(input);
         input.close();
